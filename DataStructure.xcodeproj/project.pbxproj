@@ -13,6 +13,7 @@
 		F746DDF92106DEF0000E491D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F746DDF82106DEF0000E491D /* Assets.xcassets */; };
 		F746DDFC2106DEF0000E491D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F746DDFA2106DEF0000E491D /* LaunchScreen.storyboard */; };
 		F746DDFF2106DEF0000E491D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F746DDFE2106DEF0000E491D /* main.m */; };
+		F7C27CC221085D6A00395CD0 /* TFQDataStructure.c in Sources */ = {isa = PBXBuildFile; fileRef = F7C27CC121085D6A00395CD0 /* TFQDataStructure.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		F746DDFB2106DEF0000E491D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F746DDFD2106DEF0000E491D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F746DDFE2106DEF0000E491D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F7C27CC021085D6A00395CD0 /* TFQDataStructure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFQDataStructure.h; sourceTree = "<group>"; };
+		F7C27CC121085D6A00395CD0 /* TFQDataStructure.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = TFQDataStructure.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,7 @@
 		F746DDEE2106DEEF000E491D /* DataStructure */ = {
 			isa = PBXGroup;
 			children = (
+				F7C27CBC21085D3700395CD0 /* DataStructure */,
 				F746DDEF2106DEEF000E491D /* AppDelegate.h */,
 				F746DDF02106DEEF000E491D /* AppDelegate.m */,
 				F746DDF22106DEEF000E491D /* ViewController.h */,
@@ -67,6 +71,15 @@
 				F746DDFA2106DEF0000E491D /* LaunchScreen.storyboard */,
 				F746DDFD2106DEF0000E491D /* Info.plist */,
 				F746DDFE2106DEF0000E491D /* main.m */,
+			);
+			path = DataStructure;
+			sourceTree = "<group>";
+		};
+		F7C27CBC21085D3700395CD0 /* DataStructure */ = {
+			isa = PBXGroup;
+			children = (
+				F7C27CC021085D6A00395CD0 /* TFQDataStructure.h */,
+				F7C27CC121085D6A00395CD0 /* TFQDataStructure.c */,
 			);
 			path = DataStructure;
 			sourceTree = "<group>";
@@ -142,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F746DDF42106DEEF000E491D /* ViewController.m in Sources */,
+				F7C27CC221085D6A00395CD0 /* TFQDataStructure.c in Sources */,
 				F746DDFF2106DEF0000E491D /* main.m in Sources */,
 				F746DDF12106DEEF000E491D /* AppDelegate.m in Sources */,
 			);
