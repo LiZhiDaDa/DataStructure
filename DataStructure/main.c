@@ -44,11 +44,11 @@ void calculation(){
     printf("%d\n\n", result);
 }
 
+/// 一般的查找子串算法 时间复杂度为O(n)
 int subStringIndex(String S, String T, int pos){
     int i = pos;
     int j = 0;
     while(i<S.len && j<T.len){
-        printf("%d==%c,%d==%c\n",i,S.ch[i],j,T.ch[j]);
         if(S.ch[i] == T.ch[j]){
             i++;
             j++;
@@ -63,4 +63,44 @@ int subStringIndex(String S, String T, int pos){
         return 0;
     }
 }
+
+/// KMC模式匹配算法需要的next数组
+void getNext(String T, int *next){
+    int i=1;
+    int j=0;
+    next[0]=0;
+    while (i<T.len) {
+        if(T.ch[i] == T.ch[j]){
+            i++;
+            j++;
+            next[j] = j;
+        }else{
+            j = next[j];
+        }
+    }
+}
+
+/// KMC模式匹配算法
+int KMCSubStringIndex(String S, String T, int pos){
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
