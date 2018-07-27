@@ -16,19 +16,15 @@ typedef struct{
     int len;
 }String;
 int subStringIndex(String S, String T, int pos);
+void calculation(void);
 
 int main(int argc, const char * argv[]) {
     // insert code here...
     //    printf("Hello, World!\n");
     //    test();
-    String S,T;
-    S.ch = "goodgoogle";
-    T.ch = "google";
-    S.len = 10;
-    T.len = 6;
-    int result = subStringIndex(S, T, 1);
-    printf("%d\n\n", result);
-    return 0;
+    calculation();
+    
+    return 20;
 }
 
 /**
@@ -38,19 +34,30 @@ int main(int argc, const char * argv[]) {
  *  返回子串T在主串S中第pos个字符之后的位置。若不存在返回0
  *  T非空， 1<= pos <=StrLength(S)
  */
+void calculation(){
+    String S,T;
+    S.ch = "goodgoogle";
+    T.ch = "google";
+    S.len = 10;
+    T.len = 6;
+    int result = subStringIndex(S, T, 0);
+    printf("%d\n\n", result);
+}
+
 int subStringIndex(String S, String T, int pos){
     int i = pos;
-    int j = 1;
+    int j = 0;
     while(i<S.len && j<T.len){
+        printf("%d==%c,%d==%c\n",i,S.ch[i],j,T.ch[j]);
         if(S.ch[i] == T.ch[j]){
             i++;
             j++;
         }else{
-            i=i-j+2;
-            j=1;
+            i=i-j+1;
+            j=0;
         }
     }
-    if(j>T.len){
+    if(j == T.len){
         return i-T.len;
     }else{
         return 0;
