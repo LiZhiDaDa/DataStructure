@@ -64,7 +64,7 @@ int subStringIndex(String S, String T, int pos){
     }
 }
 
-/// KMC模式匹配算法需要的next数组
+/// KMC模式匹配算法需要的next数组，KMC的重点就是理解next数组是怎么来的
 void getNext(String T, int *next){
     int i=1;
     int j=0;
