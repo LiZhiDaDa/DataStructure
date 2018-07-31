@@ -27,6 +27,41 @@ int main(int argc, const char * argv[]) {
     return 20;
 }
 
+#pragma mark - 二叉树
+typedef int TElemType;
+typedef struct BiTnode{
+    TElemType data;
+    struct BiTnode *lchild, *rchild;
+}BiTnode, *BiTree;
+///前序遍历二叉树
+void preorderTraversal(BiTree T){
+    if(T == NULL){
+        return;
+    }
+    printf("%c",T->data);
+    preorderTraversal(T->lchild);
+    preorderTraversal(T->rchild);
+}
+///中序遍历二叉树
+void inorderTraversal(BiTree T){
+    if(T == NULL){
+        return;
+    }
+    preorderTraversal(T->lchild);
+    printf("%c",T->data);
+    preorderTraversal(T->rchild);
+}
+///后序遍历二叉树
+void postorderTraversal(BiTree T){
+    if(T == NULL){
+        return;
+    }
+    preorderTraversal(T->lchild);
+    preorderTraversal(T->rchild);
+    printf("%c",T->data);
+}
+
+#pragma mark - 串
 /**
  *  模式匹配算法：子串的定位操作通常称做串的模式匹配
  *  假如要从S="goodgoogle" 中找到T="google"这个子串的位置
