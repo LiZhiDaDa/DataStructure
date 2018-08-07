@@ -88,6 +88,9 @@
 		F7EB5E952119A8160021A1A2 /* TreeStructure(树形结构) */ = {
 			isa = PBXGroup;
 			children = (
+				F7EB5E9C2119B08D0021A1A2 /* Tree(树) */,
+				F7EB5E9B2119B0890021A1A2 /* BinaryTree(二叉树) */,
+				F7EB5E9D2119B0C80021A1A2 /* RedBlackTree(红黑树) */,
 			);
 			path = "TreeStructure(树形结构)";
 			sourceTree = "<group>";
@@ -95,8 +98,61 @@
 		F7EB5E962119A8180021A1A2 /* LinearStructure(线性结构) */ = {
 			isa = PBXGroup;
 			children = (
+				F7EB5E9A2119AFD70021A1A2 /* LinearTable(线性表) */,
+				F7EB5E992119AFD40021A1A2 /* Stack(栈) */,
+				F7EB5E982119AFD10021A1A2 /* Queue(队列) */,
+				F7EB5E972119AFCC0021A1A2 /* String(串) */,
 			);
 			path = "LinearStructure(线性结构)";
+			sourceTree = "<group>";
+		};
+		F7EB5E972119AFCC0021A1A2 /* String(串) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "String(串)";
+			sourceTree = "<group>";
+		};
+		F7EB5E982119AFD10021A1A2 /* Queue(队列) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Queue(队列)";
+			sourceTree = "<group>";
+		};
+		F7EB5E992119AFD40021A1A2 /* Stack(栈) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Stack(栈)";
+			sourceTree = "<group>";
+		};
+		F7EB5E9A2119AFD70021A1A2 /* LinearTable(线性表) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "LinearTable(线性表)";
+			sourceTree = "<group>";
+		};
+		F7EB5E9B2119B0890021A1A2 /* BinaryTree(二叉树) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "BinaryTree(二叉树)";
+			sourceTree = "<group>";
+		};
+		F7EB5E9C2119B08D0021A1A2 /* Tree(树) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Tree(树)";
+			sourceTree = "<group>";
+		};
+		F7EB5E9D2119B0C80021A1A2 /* RedBlackTree(红黑树) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "RedBlackTree(红黑树)";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
