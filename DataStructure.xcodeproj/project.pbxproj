@@ -60,11 +60,43 @@
 		F7C27CCE2108799E00395CD0 /* DataStructure */ = {
 			isa = PBXGroup;
 			children = (
+				F7EB5E962119A8180021A1A2 /* LinearStructure(线性结构) */,
+				F7EB5E952119A8160021A1A2 /* TreeStructure(树形结构) */,
+				F7EB5E942119A8130021A1A2 /* GraphStructure(图形结构) */,
+				F7EB5E932119A8110021A1A2 /* CollectionStructure(集合结构) */,
 				F7C27CCF2108799E00395CD0 /* main.c */,
 				F7C27CE321087CE200395CD0 /* TFQDataStructure.h */,
 				F7C27CE421087CE200395CD0 /* TFQDataStructure.c */,
 			);
 			path = DataStructure;
+			sourceTree = "<group>";
+		};
+		F7EB5E932119A8110021A1A2 /* CollectionStructure(集合结构) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "CollectionStructure(集合结构)";
+			sourceTree = "<group>";
+		};
+		F7EB5E942119A8130021A1A2 /* GraphStructure(图形结构) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "GraphStructure(图形结构)";
+			sourceTree = "<group>";
+		};
+		F7EB5E952119A8160021A1A2 /* TreeStructure(树形结构) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "TreeStructure(树形结构)";
+			sourceTree = "<group>";
+		};
+		F7EB5E962119A8180021A1A2 /* LinearStructure(线性结构) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "LinearStructure(线性结构)";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,20 +276,24 @@
 		F7C27CD42108799E00395CD0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XQ3V9F357M;
 				GCC_C_LANGUAGE_STANDARD = gnu89;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
 		F7C27CD52108799E00395CD0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XQ3V9F357M;
 				GCC_C_LANGUAGE_STANDARD = gnu89;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
