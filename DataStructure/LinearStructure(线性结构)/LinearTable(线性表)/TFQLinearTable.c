@@ -125,7 +125,21 @@ Status listInsertSingle(LinkList l, int i, ElementType *e){
 }
 
 //单链表删除元素
-
+Status listDeleteSingle(LinkList l, int i, ElementType *e){
+    LinkList *p = l.next;
+    int j=0;
+    while(p && j<i){
+        p = p->next;
+        j++;
+    }
+    if(!p){
+        return ERROR;
+    }
+    p->next = p->next->next;
+    *e = p->next->data;
+    free(p->next);
+    return OK;
+}
 
 #pragma mark 静态链表 static
 //静态链表结构代码
