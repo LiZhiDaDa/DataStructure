@@ -205,10 +205,13 @@ int malloc_SLL(StaticLinkList space){
     }
     return i;
 }
-//静态链表获取元素
+//静态链表获取元素，都是数组了，直接用下标拿就可以了
 
 //静态链表插入元素
-
+Status staticLinkListInsert(StaticLinkList l, int i, ElementType e){
+    
+    return OK;
+}
 
 //静态链表删除元素
 #pragma mark 循环链表 cycle
