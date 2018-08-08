@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		F7C27CD02108799E00395CD0 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = F7C27CCF2108799E00395CD0 /* main.c */; };
-		F7C27CE521087CE200395CD0 /* TFQDataStructure.c in Sources */ = {isa = PBXBuildFile; fileRef = F7C27CE421087CE200395CD0 /* TFQDataStructure.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,10 +23,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F7892F72211A93EF007AF3D6 /* TFQLinearStructure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFQLinearStructure.h; sourceTree = "<group>"; };
+		F7892F73211A9DDA007AF3D6 /* TFQTreeStructure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFQTreeStructure.h; sourceTree = "<group>"; };
+		F7892F74211A9E39007AF3D6 /* TFQGraphStructure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFQGraphStructure.h; sourceTree = "<group>"; };
 		F7C27CCC2108799E00395CD0 /* DataStructure */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DataStructure; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7C27CCF2108799E00395CD0 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
-		F7C27CE321087CE200395CD0 /* TFQDataStructure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFQDataStructure.h; sourceTree = "<group>"; };
-		F7C27CE421087CE200395CD0 /* TFQDataStructure.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = TFQDataStructure.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,8 +65,6 @@
 				F7EB5E942119A8130021A1A2 /* GraphStructure(图形结构) */,
 				F7EB5E932119A8110021A1A2 /* CollectionStructure(集合结构) */,
 				F7C27CCF2108799E00395CD0 /* main.c */,
-				F7C27CE321087CE200395CD0 /* TFQDataStructure.h */,
-				F7C27CE421087CE200395CD0 /* TFQDataStructure.c */,
 			);
 			path = DataStructure;
 			sourceTree = "<group>";
@@ -81,6 +79,7 @@
 		F7EB5E942119A8130021A1A2 /* GraphStructure(图形结构) */ = {
 			isa = PBXGroup;
 			children = (
+				F7892F74211A9E39007AF3D6 /* TFQGraphStructure.h */,
 			);
 			path = "GraphStructure(图形结构)";
 			sourceTree = "<group>";
@@ -88,6 +87,7 @@
 		F7EB5E952119A8160021A1A2 /* TreeStructure(树形结构) */ = {
 			isa = PBXGroup;
 			children = (
+				F7892F73211A9DDA007AF3D6 /* TFQTreeStructure.h */,
 				F7EB5E9C2119B08D0021A1A2 /* Tree(树) */,
 				F7EB5E9B2119B0890021A1A2 /* BinaryTree(二叉树) */,
 				F7EB5E9D2119B0C80021A1A2 /* RedBlackTree(红黑树) */,
@@ -98,6 +98,7 @@
 		F7EB5E962119A8180021A1A2 /* LinearStructure(线性结构) */ = {
 			isa = PBXGroup;
 			children = (
+				F7892F72211A93EF007AF3D6 /* TFQLinearStructure.h */,
 				F7EB5E9A2119AFD70021A1A2 /* LinearTable(线性表) */,
 				F7EB5E992119AFD40021A1A2 /* Stack(栈) */,
 				F7EB5E982119AFD10021A1A2 /* Queue(队列) */,
@@ -213,7 +214,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7C27CD02108799E00395CD0 /* main.c in Sources */,
-				F7C27CE521087CE200395CD0 /* TFQDataStructure.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
