@@ -141,6 +141,32 @@ Status listDeleteSingle(LinkList l, int i, ElementType *e){
     return OK;
 }
 
+//单链表的整表创建--头插法
+void createListHead(LinkList *l, int n){
+    LinkList *p;
+    //创建头结点
+    l = (LinkList *)malloc(sizeof(struct Node));
+    l->next = NULL;
+    for(int i=0; i<n; i++){
+        p = (LinkList *)malloc(sizeof(struct Node));
+        p->data = rand()%100+1;
+        p->next = l->next;
+        l->next = p;
+    }
+}
+
+//单链表的整表创建--尾插法
+void createListTail(LinkList *l, int n){
+    LinkList *p;
+    l = (LinkList *)malloc(sizeof(struct Node));
+    for(int i=0; i<n; i++){
+        p = (LinkList *)malloc(sizeof(struct Node));
+        p->data = rand()%100+1;
+        l->next = p;
+        l = p;
+    }
+}
+
 #pragma mark 静态链表 static
 //静态链表结构代码
 //静态链表获取元素
