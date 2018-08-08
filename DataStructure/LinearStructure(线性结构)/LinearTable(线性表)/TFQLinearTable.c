@@ -181,9 +181,35 @@ Status clearList(LinkList *l){
 }
 
 #pragma mark 静态链表 static
+/**
+ *  用数组描述的链表叫静态链表
+ *  让数组的元素由data、cur两个数据域组成，data存放数据，cur存放该元素后继
+ *  元素的下标，相当于单链表中的next指针，我们把cur叫做游标。
+ *
+ *  tips：
+ *  1、把未被使用的数组元素称为备用链表。
+ *  2、数组的第一个跟最后一个元素做特殊处理，不存数据。第0个元素的cur存放备用链表第1个结点
+ *     的下标，数组的最后一个元素存放第一个有数值元素的下标，
+ */
 //静态链表结构代码
+typedef struct {
+    ElementType data;
+    int cur;
+}StaticLinkList[MAXSIZE];//因为静态链表本质还是数组，所以要声明为数组，
+
+//由于是数组，所以我们来模仿malloc数组的操作,返回当前备用链表的第一个游标
+int malloc_SLL(StaticLinkList space){
+    int i = space[0].cur; //取出备用链表的第一个元素
+    if(space[0].cur){
+        space[0].cur = space[i].cur;//备用链表的第一个要被使用了，把第二个拿来做备用
+    }
+    return i;
+}
 //静态链表获取元素
+
 //静态链表插入元素
+
+
 //静态链表删除元素
 #pragma mark 循环链表 cycle
 //循环链表结构代码
