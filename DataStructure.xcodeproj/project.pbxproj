@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F7892F77211AA386007AF3D6 /* TFQLinearTable.c in Sources */ = {isa = PBXBuildFile; fileRef = F7892F76211AA385007AF3D6 /* TFQLinearTable.c */; };
 		F7C27CD02108799E00395CD0 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = F7C27CCF2108799E00395CD0 /* main.c */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +27,8 @@
 		F7892F72211A93EF007AF3D6 /* TFQLinearStructure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFQLinearStructure.h; sourceTree = "<group>"; };
 		F7892F73211A9DDA007AF3D6 /* TFQTreeStructure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFQTreeStructure.h; sourceTree = "<group>"; };
 		F7892F74211A9E39007AF3D6 /* TFQGraphStructure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFQGraphStructure.h; sourceTree = "<group>"; };
+		F7892F75211AA385007AF3D6 /* TFQLinearTable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFQLinearTable.h; sourceTree = "<group>"; };
+		F7892F76211AA385007AF3D6 /* TFQLinearTable.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = TFQLinearTable.c; sourceTree = "<group>"; };
 		F7C27CCC2108799E00395CD0 /* DataStructure */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DataStructure; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7C27CCF2108799E00395CD0 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,6 +134,8 @@
 		F7EB5E9A2119AFD70021A1A2 /* LinearTable(线性表) */ = {
 			isa = PBXGroup;
 			children = (
+				F7892F75211AA385007AF3D6 /* TFQLinearTable.h */,
+				F7892F76211AA385007AF3D6 /* TFQLinearTable.c */,
 			);
 			path = "LinearTable(线性表)";
 			sourceTree = "<group>";
@@ -214,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7C27CD02108799E00395CD0 /* main.c in Sources */,
+				F7892F77211AA386007AF3D6 /* TFQLinearTable.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
