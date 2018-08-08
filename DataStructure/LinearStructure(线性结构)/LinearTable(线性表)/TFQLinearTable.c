@@ -32,56 +32,56 @@ typedef struct{
 }SqList;
 
 //获取元素
-Status getElement(SqList l, int i, ElementType *e){
-    if(l.length == 0 || i<0 || i>l.length){
+Status getElement(SqList *l, int i, ElementType *e){
+    if(l->length == 0 || i<0 || i>(*l).length){
         return ERROR;
     }
-    *e = l.data[i];
+    *e = l->data[i];
     return OK;
 }
 
 //插入元素
-Status listInsert(SqList l, int i, ElementType *e){
-    if(l.length == MAXSIZE){
+Status listInsert(SqList *l, int i, ElementType *e){
+    if(l->length == MAXSIZE){
         return ERROR;
     }
-    if(i<0 || i>l.length-1){
+    if(i<0 || i>l->length-1){
         return ERROR;
     }
     //将i之后的元素都往后移1位
-    for(int j=l.length; j>i; j--){
-        l.data[j] = l.data[j-1];
+    for(int j=l->length; j>i; j--){
+        l->data[j] = l->data[j-1];
     }
-    l.data[i] = *e;
-    l.length ++;
+    l->data[i] = *e;
+    l->length ++;
     return OK;
 }
 
 //删除操作
-Status listDelete(SqList l, int i, ElementType *e){
-    if(l.length == 0){
+Status listDelete(SqList *l, int i, ElementType *e){
+    if(l->length == 0){
         return ERROR;
     }
-    if(i<1 || i>l.length-1){
+    if(i<1 || i>l->length-1){
         return ERROR;
     }
     //i之后的元素往前移
-    for(int j=i; j<l.length-2; j++){
-        l.data[j] = l.data[j+1];
+    for(int j=i; j<l->length-2; j++){
+        l->data[j] = l->data[j+1];
     }
-    l.length --;
+    l->length --;
     return OK;
 }
 
 #pragma mark - -----链式存储结构-----
+#pragma mark 单链表 single
 /**
- *  优点：
- *  缺点：1、
- *       2、
- *       3、
+ *  与顺序存储结构对比
+ *  优点：1、不需要分配存储空间，元素个数不受限制
+ *       2、找对对应位置后，插入删除O(1)
+ *  缺点：1、查找不方便O(n)
  */
 
-#pragma mark 单链表 single
 //单链表结构代码 这里声明结构体跟给结构体取别名分开来写，方便大家理解
 struct Node{
     ElementType data;
@@ -90,8 +90,8 @@ struct Node{
 typedef struct Node LinkList;
 
 //单链表获取元素
-Status getElementSingle(LinkList l, int i, ElementType *e){
-    LinkList *p = l.next;
+Status getElementSingle(LinkList *l, int i, ElementType *e){
+    LinkList *p = l->next;
     int j = 0;
     while (p && j<i) {
         //一般来说  p->用来指向p中的结构体,但是也跟声明方式有关系
@@ -107,8 +107,8 @@ Status getElementSingle(LinkList l, int i, ElementType *e){
 }
 
 //单链表插入元素
-Status listInsertSingle(LinkList l, int i, ElementType *e){
-    LinkList *p = l.next;
+Status listInsertSingle(LinkList *l, int i, ElementType *e){
+    LinkList *p = l->next;
     int j = 0;
     while(p && j<i){
         p = p->next;
@@ -125,8 +125,8 @@ Status listInsertSingle(LinkList l, int i, ElementType *e){
 }
 
 //单链表删除元素
-Status listDeleteSingle(LinkList l, int i, ElementType *e){
-    LinkList *p = l.next;
+Status listDeleteSingle(LinkList *l, int i, ElementType *e){
+    LinkList *p = l->next;
     int j=0;
     while(p && j<i){
         p = p->next;
@@ -165,6 +165,19 @@ void createListTail(LinkList *l, int n){
         l->next = p;
         l = p;
     }
+}
+
+//单链表的整表删除
+Status clearList(LinkList *l){
+    LinkList *p, *q;
+    p = l->next;
+    while (p) {
+        q = p->next;
+        free(p);
+        p = q;
+    }
+    l->next = NULL;
+    return OK;
 }
 
 #pragma mark 静态链表 static
