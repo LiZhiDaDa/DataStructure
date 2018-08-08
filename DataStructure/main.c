@@ -27,7 +27,7 @@ int main(int argc, const char * argv[]) {
  *  2、栈和队列都是线性表，栈FIFO 队列FILO
  *
  *  树、二叉树、红黑树的关系？
- *
+ *  二叉树是特殊的树，红黑树是特殊的二叉树
  *
  *
  *
