@@ -186,6 +186,9 @@ Status clearList(LinkList *l){
  *  让数组的元素由data、cur两个数据域组成，data存放数据，cur存放该元素后继
  *  元素的下标，相当于单链表中的next指针，我们把cur叫做游标。
  *
+ *  优点：插入删除时只需要修改游标，不需要移动元素
+ *  缺点：1、没有解决连续存储分配带来的表长难以确定的问题
+ *       2、失去了顺序存储结构随机存取的特性（并没有理解。。。）
  *  tips：
  *  1、把未被使用的数组元素称为备用链表。
  *  2、数组的第一个跟最后一个元素做特殊处理，不存数据。第0个元素的cur存放备用链表第1个结点
@@ -205,15 +208,56 @@ int malloc_SLL(StaticLinkList space){
     }
     return i;
 }
+
+//free操作,把i回收到备用链表
+void free_SLL(StaticLinkList space, int i){
+    space[i].cur = space[0].cur;
+    space[0].cur = i;
+}
+
 //静态链表获取元素，都是数组了，直接用下标拿就可以了
 
 //静态链表插入元素
 Status staticLinkListInsert(StaticLinkList l, int i, ElementType e){
-    
+    if(i<1 || i>MAXSIZE){
+        return ERROR;
+    }
+    int j = malloc_SLL(l);
+    l[j].data = e;
+    int m = MAXSIZE-1;//最后一个元素的下标，cur存放的就是第一个元素的下标
+    for(int k=1; k<i; k++){
+        m = l[m].cur;
+    }
+    l[j].cur = l[m].cur;
+    l[m].cur = j;
     return OK;
 }
 
 //静态链表删除元素
+Status staticLinkListDelete(StaticLinkList l,int i){
+    if(i<0 || i>MAXSIZE){
+        return ERROR;
+    }
+    int j = MAXSIZE-1;
+    for(int k=0; k<i-1; k++){
+        j = l[j].cur;
+    }
+    l[j].cur = l[l[j].cur].cur;
+    free_SLL(l, l[j].cur);
+    return OK;
+}
+
+//静态链表长度
+int StaticLinkListLength(StaticLinkList l){
+    int i=0;
+    int j = l[MAXSIZE-1].cur;
+    while (j) {
+        j = l[j].cur;
+        i++;
+    }
+    return i;
+}
+
 #pragma mark 循环链表 cycle
 //循环链表结构代码
 //循环链表获取元素
