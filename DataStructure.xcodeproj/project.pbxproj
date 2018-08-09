@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F7519620211C499600A42055 /* TFQStack.c in Sources */ = {isa = PBXBuildFile; fileRef = F751961F211C499600A42055 /* TFQStack.c */; };
 		F7892F77211AA386007AF3D6 /* TFQLinearTable.c in Sources */ = {isa = PBXBuildFile; fileRef = F7892F76211AA385007AF3D6 /* TFQLinearTable.c */; };
 		F7C27CD02108799E00395CD0 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = F7C27CCF2108799E00395CD0 /* main.c */; };
 /* End PBXBuildFile section */
@@ -24,6 +25,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F751961E211C499600A42055 /* TFQStack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFQStack.h; sourceTree = "<group>"; };
+		F751961F211C499600A42055 /* TFQStack.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = TFQStack.c; sourceTree = "<group>"; };
 		F7892F72211A93EF007AF3D6 /* TFQLinearStructure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFQLinearStructure.h; sourceTree = "<group>"; };
 		F7892F73211A9DDA007AF3D6 /* TFQTreeStructure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFQTreeStructure.h; sourceTree = "<group>"; };
 		F7892F74211A9E39007AF3D6 /* TFQGraphStructure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFQGraphStructure.h; sourceTree = "<group>"; };
@@ -127,6 +130,8 @@
 		F7EB5E992119AFD40021A1A2 /* Stack(栈) */ = {
 			isa = PBXGroup;
 			children = (
+				F751961E211C499600A42055 /* TFQStack.h */,
+				F751961F211C499600A42055 /* TFQStack.c */,
 			);
 			path = "Stack(栈)";
 			sourceTree = "<group>";
@@ -219,6 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7C27CD02108799E00395CD0 /* main.c in Sources */,
+				F7519620211C499600A42055 /* TFQStack.c in Sources */,
 				F7892F77211AA386007AF3D6 /* TFQLinearTable.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
