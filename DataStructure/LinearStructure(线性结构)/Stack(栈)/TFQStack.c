@@ -86,14 +86,13 @@ Status popDouble(DoubleStack *d, ElementType *e, int stackNumber){
 #pragma mark - -----栈的链式存储结构-----
 /**
  *  其实栈的链式存储结构跟单链表非常非非常类似了
- *
- *
- *
- *
+ *  其实我都超级不想写了。一模一样的东西。
  */
 
+#pragma mark - -----栈的应用-----
+#pragma mark 递归-斐波那契数列
 
-
+#pragma mark 后缀表达式
 
 
 
