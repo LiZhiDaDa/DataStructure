@@ -38,6 +38,7 @@ Status initQueue(Queue *q){
     q->rear = 0;
     return OK;
 }
+
 /**
  *  循环队列长度  这个可以推倒，一种情况是rear>front len=rear-front
  *  另一种情况是rear<front,一部分长度是rear另一部分长度是maxsize-front ==> rear+maxsize-front
@@ -45,6 +46,26 @@ Status initQueue(Queue *q){
  */
 int queueLength(Queue q){
     return (q.rear - q.front+MAXSIZE)%MAXSIZE;
+}
+
+//入队列操作
+Status inQueue(Queue *q, ElementType e){
+    if(queueLength(*q) == MAXSIZE -1){
+        return ERROR;
+    }
+    q->data[q->rear] = e;
+    q->rear = (q->rear+1)%MAXSIZE;
+    return OK;
+}
+
+//出队列操作
+Status outQueue(Queue *q, ElementType *e){
+    if(q->rear == q->front){
+        return ERROR;
+    }
+    *e = q->data[q->front];
+    q->front = (q->front+1)%MAXSIZE;
+    return OK;
 }
 
 #pragma mark - -----队列的链式存储结构-----
