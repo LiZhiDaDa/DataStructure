@@ -69,8 +69,9 @@ Status outQueue(Queue *q, ElementType *e){
 }
 
 #pragma mark - -----队列的链式存储结构-----
-
-
+/**
+ *  完全参考单链表的链式存储就可以了。很简单，插入的时候插尾部，取出的时候取头部 LIFO last in first out.
+ */
 
 
 
