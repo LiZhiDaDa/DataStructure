@@ -9,6 +9,17 @@
 #ifndef TFQString_h
 #define TFQString_h
 
-#include <stdio.h>
+#define MAXSIZE 20
+#define ERROR 0
+#define OK 1
+typedef int Status;
+struct string{
+    char *data[MAXSIZE];
+    int len;
+};
+typedef struct string String;
 
+#include <stdio.h>
+int indexWithBigString(String shortStr, String longStr);
+    
 #endif /* TFQString_h */

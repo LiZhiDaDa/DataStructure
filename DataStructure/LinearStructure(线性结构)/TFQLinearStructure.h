@@ -10,6 +10,7 @@
 #define TFQLinearStructure_h
 
 #include "TFQStack.h"
+#include "TFQString.h"
 
 #endif /* TFQLinearStructure_h */
 
