@@ -9,6 +9,7 @@
 #ifndef TFQLinearStructure_h
 #define TFQLinearStructure_h
 
+#include "TFQStack.h"
 
 #endif /* TFQLinearStructure_h */
 

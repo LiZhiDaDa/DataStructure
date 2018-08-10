@@ -91,10 +91,27 @@ Status popDouble(DoubleStack *d, ElementType *e, int stackNumber){
 
 #pragma mark - -----栈的应用-----
 #pragma mark 递归-斐波那契数列
+/**
+ *  当前项的值等于前面两项的和
+ */
+//求第n项的值
+int fbi(int n){
+    if(n == 1){
+        return 1;
+    }else if(n == 2){
+        return 1;
+    }else{
+        return fbi(n-1) + fbi(n-2);
+    }
+}
 
 #pragma mark 后缀表达式
-
-
+/**
+ *  感觉是反人类的表达式哈哈
+ *
+ *  中缀表达式转后缀表达式规则：
+ *
+ */
 
 
 

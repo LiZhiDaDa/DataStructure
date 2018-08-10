@@ -10,5 +10,7 @@
 #define TFQStack_h
 
 #include <stdio.h>
+///斐波那契数列
+int fbi(int n);
 
 #endif /* TFQStack_h */
