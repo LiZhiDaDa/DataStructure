@@ -41,7 +41,12 @@ int main(int argc, const char * argv[]) {
     //朴素匹配模式算法
     String sStr = {"google",6};
     String lStr = {"goodgoogle",10};
-    printf("模式匹配算法  %d \n", indexWithBigString(sStr, lStr));
+    int index = indexWithBigString(sStr, lStr);
+    printf("普通模式匹配算法  %d \n", index);
+    
+    //KMP模式匹配算法
+    int indexKMP = KMPIndex(sStr, lStr);
+    printf("KMP模式匹配算法  %d \n", index);
     return 0;
 }
 

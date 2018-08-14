@@ -20,6 +20,12 @@ struct string{
 typedef struct string String;
 
 #include <stdio.h>
+#include <string.h>
+///普通的匹配模式算法
 int indexWithBigString(String shortStr, String longStr);
+///KMP模式匹配算法
+int KMPIndex(String shortStr, String longStr);
+///计算next[]
+void calNext(const char p[],int next[]);
     
 #endif /* TFQString_h */
