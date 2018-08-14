@@ -27,5 +27,9 @@ int indexWithBigString(String shortStr, String longStr);
 int KMPIndex(String shortStr, String longStr);
 ///计算next[]
 void calNext(const char p[],int next[]);
+///next[]优化
+void calNextOptimize(const char p[],int next[]);
+///KMP模式匹配算法优化
+int KMPIndexOptimize(String shortStr, String longStr);
     
 #endif /* TFQString_h */

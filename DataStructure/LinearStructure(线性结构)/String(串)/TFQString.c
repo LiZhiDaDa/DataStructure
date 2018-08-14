@@ -48,7 +48,7 @@ int KMPIndex(String shortStr, String longStr){
     int next[shortStr.len];
     calNext(shortStr.data, next);
     int i=0, j=0;
-    while(j<longStr.len){
+    while(i<shortStr.len && j<longStr.len){
         if(i==0 || shortStr.data[i]==longStr.data[j]){
             j++;
             i++;
@@ -74,24 +74,57 @@ void calNext(const char p[],int next[]){
         if(p[i] == p[j]){
             j++;
         }
-        next[i] = j;
+        next[i] = j-1;
+    }
+    for(int k=0; k<len; k++){
+        printf("next[%d] === %d \n",k,next[k]);
     }
 }
 
 #pragma mark - KMP模式匹配算法改进
 /**
- *
- *
- *
- *
- *
- *
- *
+ *  这个优化主要是针对next[]的优化
+ *  如果子串是 aaab  主串是 aaaxdfdlfjdlfj 就会发现next[]的小小的缺点了。
  *
  */
 int KMPIndexOptimize(String shortStr, String longStr){
-    
+    int next[shortStr.len];
+    calNextOptimize(shortStr.data, next);
+    int i=0, j=0;
+    while(j<longStr.len){
+        if(i==0 || shortStr.data[i]==longStr.data[j]){
+            j++;
+            i++;
+        }else{
+            i = next[i];
+        }
+        if(i==shortStr.len){
+            return j-i;
+        }
+    }
     return 0;
+}
+void calNextOptimize(const char p[],int next[]){
+    int len = (int)strlen(p);//匹配字符串的长度
+    next[0] = 0;
+    //i:模版字符串下标；j:最大前后缀长度
+    for(int i=1,j=0; i<len; i++){
+        while(j>0 && p[i] != p[j]){
+            j = next[j-1];
+        }
+        if(p[i] == p[j]){
+            j++;
+        }
+        if(i>0 && p[i] == p[i-1]){
+            next[i] = next[next[i]];
+        }else{
+            next[i] = j-1;
+        }
+    }
+    printf("优化后的数组:\n");
+    for(int k=0; k<len; k++){
+        printf("next[%d] === %d \n",k,next[k]);
+    }
 }
 
 

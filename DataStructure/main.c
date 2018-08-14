@@ -39,14 +39,28 @@ int main(int argc, const char * argv[]) {
     printf("斐波那契数列  %d \n", fbi(6));
     
     //朴素匹配模式算法
-    String sStr = {"google",6};
-    String lStr = {"goodgoogle",10};
+    String sStr = {"aaaaaa",6};
+    String lStr = {"aaadaaaaaa",10};
     int index = indexWithBigString(sStr, lStr);
     printf("普通模式匹配算法  %d \n", index);
     
+    /*
+     这两个算法没写对，乱七八糟很拗口，放弃了。
     //KMP模式匹配算法
     int indexKMP = KMPIndex(sStr, lStr);
-    printf("KMP模式匹配算法  %d \n", index);
+    printf("KMP模式匹配算法  %d \n", indexKMP);
+    
+    //KMP模式匹配算法优化
+    int indexKMPOptimize = KMPIndexOptimize(sStr, lStr);
+    printf("KMP模式匹配算法优化  %d \n", indexKMPOptimize);
+    */
+    
+    
+    
+    
+    
+    
+    
     return 0;
 }
 
