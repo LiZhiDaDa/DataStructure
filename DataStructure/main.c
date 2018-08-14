@@ -36,12 +36,12 @@
 int main(int argc, const char * argv[]) {
     
     //打印斐波那契数列结果
-    printf("%d \n", fbi(6));
+    printf("斐波那契数列  %d \n", fbi(6));
     
     //朴素匹配模式算法
-    String sStr = {"ada",3};
-    String lStr = {"aadasadf",8};
-    printf("%d \n", indexWithBigString(sStr, lStr));
+    String sStr = {"google",6};
+    String lStr = {"goodgoogle",10};
+    printf("模式匹配算法  %d \n", indexWithBigString(sStr, lStr));
     return 0;
 }
 

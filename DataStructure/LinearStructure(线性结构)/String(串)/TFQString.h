@@ -14,7 +14,7 @@
 #define OK 1
 typedef int Status;
 struct string{
-    char *data[MAXSIZE];
+    char data[MAXSIZE];
     int len;
 };
 typedef struct string String;

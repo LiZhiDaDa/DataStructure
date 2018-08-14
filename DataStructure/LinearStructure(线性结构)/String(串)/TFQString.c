@@ -29,11 +29,11 @@ int indexWithBigString(String shortStr, String longStr){
             i++;
             j++;
         }else{
+            j=j-i+1;
             i=0;
-            j=j-i;
         }
-        if(i == shortStr.len-1){
-            return j-1;
+        if(i == shortStr.len){
+            return j-i;
         }
     }
     return 0;
