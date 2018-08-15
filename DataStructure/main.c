@@ -45,7 +45,7 @@ int main(int argc, const char * argv[]) {
     printf("普通模式匹配算法  %d \n", index);
     
     /*
-     这两个算法没写对，乱七八糟很拗口，放弃了。思想倒是懂得透透的，但是代码落实上就很苦逼
+     这两个算法没写对，乱七八糟很拗口。思想倒是懂得透透的，但是代码落实上就很苦逼。建议大家理解思想，不用死抠代码。
     //KMP模式匹配算法
     int indexKMP = KMPIndex(sStr, lStr);
     printf("KMP模式匹配算法  %d \n", indexKMP);

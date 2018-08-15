@@ -9,6 +9,7 @@
 #ifndef TFQTreeStructure_h
 #define TFQTreeStructure_h
 
+#include "TFQBinaryTree.h"
 
 #endif /* TFQTreeStructure_h */
 
