@@ -44,14 +44,14 @@ struct node{
     ElementType data;
     struct node *lchild, *rchild;
 };
-typedef struct node Node;
+typedef struct node BinaryTree;
 
 #pragma mark 遍历二叉树
 /**
  *  二叉树的遍历方式有很多，如果我们限制了从左到右的习惯，那么主要分为4种，前序、中序、后序、层序。
  */
 //前序遍历  先根节点，次左子树，后右子树
-void preorderTraversal(Node *t){
+void preorderTraversal(BinaryTree *t){
     if(t == NULL){
         return;
     }
@@ -61,7 +61,7 @@ void preorderTraversal(Node *t){
 }
 
 //中序遍历  先左子树，次根节点，后右子树
-void middleorderErgodic(Node *t){
+void middleorderErgodic(BinaryTree *t){
     if(t == NULL){
         return;
     }
@@ -71,7 +71,7 @@ void middleorderErgodic(Node *t){
 }
 
 //后序遍历  先左子树，次右子树，后根节点
-void postrderTraversal(Node *t){
+void postrderTraversal(BinaryTree *t){
     if(t == NULL){
         return;
     }
@@ -89,46 +89,75 @@ void postrderTraversal(Node *t){
 */
 
 #pragma mark - -----二叉树的建立-----
+/**
+ *           A
+ *         |   |
+ *         B   C
+ *          |
+ *          D
+ *  现有二叉树如上图所示，我们先把二叉树补全，保证每个结点都有左右孩子
+ *            A
+ *        |      |
+ *        B      C
+ *      |  |    | |
+ *      #  D    # #
+ *        | |
+ *        # #
+ *  这样二叉树的前序遍历结果为:AB#D##C##
+ */
+void createTree(BinaryTree *t){
+    ElementType ch;
+    scanf("%d", &ch);
+    if(ch == '#'){
+        t = NULL;
+    }else{
+        t = (BinaryTree *)malloc(sizeof(struct node));
+        if(! t){
+            exit(ERROR);
+        }
+        t->data = ch;
+        createTree(t->lchild);
+        createTree(t->rchild);
+    }
+    
+}
 
+#pragma mark 线索二叉树
+/**
+ *  二叉树按照某种次序遍历每个结点都有前驱后继指针，这样的二叉树就是线索二叉树
+ *
+ *  线索化的实质就是将二叉链表中的空指针改为指向前驱或后继的线索，所以线索化的过程就是遍历的过程
+ *  感觉线索化的过程跟其他的思想简直一样，这里只实现结构。
+ */
+//线索二叉树的结构实现
+enum child{
+    lrChild, //lrChild=0 表示指向左右孩子的指针
+    thread  //thread=1 表示指向前驱或后继的线索
+};
+typedef enum child pointerTag;
 
+struct thrNode{
+    ElementType data;
+    struct thrNode *lchild, *rchild;
+    pointerTag lTag;
+    pointerTag rTag;
+};
+typedef struct thrNode thrTree;
 
+#pragma mark - -----树、森林与二叉树的转换-----
+/**
+ *  树、森林与二叉树的转换这里不做赘述了。需要的时候查资料，按照步骤转换即可。
+ */
+#pragma mark 赫夫曼树及其应用
+/**
+ *  带权路径长度WPL最小的二叉树称做赫夫曼树，具体步骤：
+ *  1、根据给定的n个权值{W1,W2,...,Wn}构成n棵二叉树的集合F={T1,T2,...Tn},其中每棵二叉树Ti中只有一个带权为Wi的根节点，其左右子树均为空。
+ *  2、在F中选取两棵根节点的权值最小的树作为左右子树构造一棵新的二叉树，且置新的二叉树的根节点的权值为其左右子树上根结点的权值之和。
+ *  3、在F中删除这两棵树，同时将新得到的二叉树加入F中。
+ *  4、重复2和3步骤，直到F只含一棵树位置。这棵树便是赫夫曼树。
+ */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/**
+ *  赫夫曼编码： 把文字出现的频率当做权，然后用赫夫曼树来确定其表达的方式，形成了赫夫曼编码。
+ *  这个概念可以具体google一下，只要懂了赫夫曼树，赫夫曼编码就很容易懂了。
+ */
